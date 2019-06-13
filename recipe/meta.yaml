@@ -1,5 +1,5 @@
 {% set name = "doepipeline" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/clicumu/doepipeline/archive/v{{ version }}.tar.gz
-  sha256: f02c92912d979f28b4f49ccfd15f781f6498bc3f40e2286bb747505254d0be36
+  sha256: 0fdc5595b422fb05c2c2c4ffcaa9b8c64f1df6807f832262c2bc4387dd0b1589
 
 build:
   number: 0
@@ -22,9 +22,10 @@ requirements:
   run:
     - python >=3
     - pandas
-    - pydoe2
+    - pydoe2 >=1.2.0
     - pyyaml
-    - statsmodels
+    - statsmodels ==0.9.0
+    - scipy ==1.2.1
 
 test:
   imports:
