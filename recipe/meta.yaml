@@ -12,15 +12,15 @@ source:
 build:
   number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
-  skip: True  # [win]
+  noarch: python
 
 requirements:
   host:
-    - python >=3
+    - python
     - pip
 
   run:
-    - python >=3
+    - python
     - pandas
     - pydoe2 >=1.2.0
     - pyyaml
