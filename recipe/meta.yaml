@@ -10,17 +10,17 @@ source:
   sha256: 0fdc5595b422fb05c2c2c4ffcaa9b8c64f1df6807f832262c2bc4387dd0b1589
 
 build:
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
-  skip: True  # [win]
+  noarch: python
 
 requirements:
   host:
-    - python >=3
+    - python >=3.5
     - pip
 
   run:
-    - python >=3
+    - python >=3.5
     - pandas
     - pydoe2 >=1.2.0
     - pyyaml
