@@ -10,17 +10,17 @@ source:
   sha256: 0fdc5595b422fb05c2c2c4ffcaa9b8c64f1df6807f832262c2bc4387dd0b1589
 
 build:
-  number: 2
+  number: 3
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
   noarch: python
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
 
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - pandas
     - pydoe2 >=1.2.0
     - pyyaml
@@ -28,6 +28,8 @@ requirements:
     - scipy >=1.2.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - doepipeline
     - doepipeline.executor
